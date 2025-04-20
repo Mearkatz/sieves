@@ -1,0 +1,22 @@
+[package]
+name = "sieves"
+version = "0.1.0"
+edition = "2024"
+authors = [
+  "Beetle <drquinsey@gmail.com>",
+]
+description = "a library for adding two numbers"
+license = "MIT"
+
+[lints.rust]
+unsafe_code = { level = "deny", priority = -1 }
+
+[lints.clippy]
+enum_glob_use = { level = "deny", priority = -2 }
+pedantic = { level = "deny", priority = -3 }
+nursery = { level = "deny", priority = -4 }
+unwrap_used = { level = "deny", priority = -5 }
+expect_used = { level = "deny", priority = -6 }
+
+[dependencies]
+rayon = "1.10.0"
