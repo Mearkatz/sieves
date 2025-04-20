@@ -52,7 +52,7 @@ unsafe impl Sync for ThreadSafeBoolPtr {}
 /// A data-race safe Vec<bool> where elements default to true and once set to false remain false forever.
 /// # Notes On Safety
 /// For simplicity the internal Vec's length should not grow
-struct SieveVecBool {
+pub struct SieveVecBool {
     vec: Vec<bool>,
 }
 
@@ -64,11 +64,13 @@ impl From<Vec<bool>> for SieveVecBool {
 
 impl SieveVecBool {
     /// Returns an empty `SieveVecBool`
+    #[must_use]
     pub const fn new() -> Self {
         Self { vec: Vec::new() }
     }
 
     /// Returns the inner `Vec`
+    #[must_use]
     pub fn into_inner(self) -> Vec<bool> {
         self.vec
     }
@@ -97,5 +99,11 @@ impl SieveVecBool {
             let mut p = ptr.add(index);
             p.write_false();
         });
+    }
+}
+
+impl Default for SieveVecBool {
+    fn default() -> Self {
+        Self::new()
     }
 }
