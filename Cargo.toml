@@ -8,9 +8,6 @@ authors = [
 description = "a library for adding two numbers"
 license = "MIT"
 
-[lints.rust]
-unsafe_code = { level = "deny", priority = -1 }
-
 [lints.clippy]
 enum_glob_use = { level = "deny", priority = -2 }
 pedantic = { level = "deny", priority = -3 }
