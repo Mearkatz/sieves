@@ -1,3 +1,2 @@
-A Rust template for a simple library that adds two numbers.
-Has what I consider sensible lints for most libraries.
+A helper Rust library I made to multi-thread a prime sieve.
 
