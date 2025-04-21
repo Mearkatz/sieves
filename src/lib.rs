@@ -28,7 +28,7 @@ impl<T> ThreadSafeMutPtr<T> {
     # Safety
     Has the same safety implications as `ThreadSafeMutPtr::new`
     */
-    const unsafe fn from_mut_ref(r: &mut T) -> Self {
+    pub const unsafe fn from_mut_ref(r: &mut T) -> Self {
         unsafe { Self::new(std::ptr::from_mut(r)) }
     }
 
