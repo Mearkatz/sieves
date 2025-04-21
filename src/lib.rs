@@ -52,7 +52,7 @@ impl<T> ThreadSafeMutPtr<T> {
     The inner pointer must be known to be non-null
     */
     #[must_use]
-    pub const unsafe fn into_mut_ref_unchecked<'a>(mut self) -> &'a mut T {
+    pub const unsafe fn into_mut_ref_unchecked<'a>(self) -> &'a mut T {
         unsafe { &mut *self.into_inner() }
     }
 
